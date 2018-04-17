@@ -26,16 +26,23 @@
         var socket;
 
         function init() {
-            var host = "ws://127.0.0.1:12345/";
+            var host = "ws://127.0.0.1:9158/";
             try {
                 socket = new WebSocket(host);
-                socket.onopen = function (msg) {
+                socket.onopen = function (Event) {
+                    console.log(Event)
                     log('Connected');
                 };
-                socket.onmessage = function (msg) {
-                    log(msg.data);
+                socket.onmessage = function (MessageEvent) {
+                    console.log(MessageEvent)
+                    log(MessageEvent.data);
                 };
-                socket.onclose = function (msg) {
+                socket.onclose = function (CloseEvent) {
+                    console.log(CloseEvent)
+                    log("Lose Connection!");
+                };
+                socket.onerror = function (Event) {
+                    console.log(Event)
                     log("Lose Connection!");
                 };
             }
