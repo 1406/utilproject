@@ -1,0 +1,26 @@
+#vdisk:
+#id:str(uuid)
+#name:str(desktopname/clouddiskname/localdiskname)
+#capacity:int(disk capacity)
+#size:int(file size)
+#snapshot:[](snapshot obj list)
+#parent:str(parent uuid)
+#type:str(qcow2/vhd)
+#boot:bool(is bootable disk)
+#status:str(init/ready/...)
+#owner:str(username)
+#file:str(path/to/file)
+
+class vdisk:
+    def __init__(*args, **kw):
+        self.id = kw.get('id')
+        self.name = kw.get('name')
+        self.capacity = kw.get('capacity')
+        self.size = kw.get('size')
+        self.snapshot = kw.get('snapshot')
+        self.parent = kw.get('parent')
+        self.type = kw.get('type')
+        self.boot = kw.get('boot')
+        self.status = kw.get('status')
+        self.owner = kw.get('owner')
+        self.file = kw.get('file')

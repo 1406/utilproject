@@ -1,0 +1,19 @@
+
+.mainwindow {
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 #4c5caa, stop: 1 #27254e
+    );
+}
+
+QDialog {
+    background-color: #f0f;
+}
+
+QBoxLayout {
+    background-color: rgba(255, 255, 255, 255)
+}
+
+/* QWidget:hover {
+    background-color: #666;
+} */
